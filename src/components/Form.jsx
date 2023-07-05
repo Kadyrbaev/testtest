@@ -40,7 +40,7 @@ const Form = ({obj}) => {
         <main>
           <img src={mom2} alt="" />
         </main>
-        <RegistrText>Сайтка кируу учун апамдын туулган кун,айын туура толтуруу керек</RegistrText>
+        <RegistrText>Апамдын туулган кун,айын туура толтуруу керек</RegistrText>
 
         <TextField
           fullWidth

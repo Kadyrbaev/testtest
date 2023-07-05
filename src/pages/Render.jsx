@@ -1,7 +1,8 @@
+
 import React from 'react'
 import { styled } from 'styled-components'
 
-const RenderText = ({aty, text}) => {
+const Render = ({aty, text}) => {
   return (
     <Container>
       <h1>{aty}</h1>
@@ -10,7 +11,7 @@ const RenderText = ({aty, text}) => {
   )
 }
 
-export default RenderText
+export default Render
 
 const Container = styled.div`
     box-shadow: 0px 0px 10px 0.89px;

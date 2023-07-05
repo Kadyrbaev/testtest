@@ -25,7 +25,7 @@ const FormaInput = (props) => {
         <TextArea onChange={areaChange} placeholder='Куттуктоо жазуу' name="" id="" cols="30" rows="10"></TextArea>
         <div>
             <input onChange={nameChange} type="text" placeholder='Атыныз'/>
-            <button onClick={addData}>Кетируу</button>
+            <button style={{border: "none"}} onClick={addData}>Кетируу</button>
         </div>
     </Cont>
   )

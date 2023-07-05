@@ -7,7 +7,6 @@ const Registr = ({obj}) => {
   return (
     <RegistrStyle>
         <Header/>
-        {/* <RegistrText>Сайтка кируу учун апамдын туулган кун,айын туура толтуруу керек</RegistrText> */}
         <Form obj={obj}/>
     </RegistrStyle>
   )

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <HeaderStyle>
       <HeaderImg src={mom} alt="image" />
-      <h2><span>Арыкбаева Бубайша </span>amet consectetur adipisicing elit.</h2>
+      <h2><span>Арыкбаева Бубайша </span><br />The most beautiful woman</h2>
     </HeaderStyle>
   )
 }

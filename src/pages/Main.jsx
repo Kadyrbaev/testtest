@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import FormaInput from './FormaInput'
-import mom3 from "../assets/mom3.jpg"
-import mom4 from "../assets/mom4.jpg"
-import mom5 from "../assets/mom5.jpg"
-import mom2 from "../assets/mom2.jpg"
-import mom from "../assets/mom.jpg"
-import RenderText from './RenderText'
+// import mom3 from "../assets/mom3.jpg"
+// import mom4 from "../assets/mom4.jpg"
+// import mom5 from "../assets/mom5.jpg"
+// import mom2 from "../assets/mom2.jpg"
+// import mom from "../assets/mom.jpg"
+import Render from './Render'
+
+
+let arr=[]
 
 const Main = () => {
-  let arr=[]
   const arr2 = JSON.parse(localStorage.getItem("mom"))
-  arr = arr2!==undefined ? arr2 : []
+  arr = arr2!==null ? arr2 : []
   const [state, setState] = useState(arr)
   localStorage.setItem("mom", JSON.stringify(state))
   
@@ -23,22 +25,22 @@ const Main = () => {
   return (
     <MainStyle>
       <Mark>
-          <marquee>Mom happy birthday</marquee>
+          {/* <marquee>Mom happy birthday</marquee> */}
       </Mark>
       <ImgCont>
-      <marquee>
+      {/* <marquee>
 
           <img src={mom3} alt="" />
           <img src={mom5} alt="" />
           <img src={mom4} alt="" />
           <img src={mom2} alt="" />
           <img src={mom} alt="" />
-      </marquee>
+      </marquee> */}
       </ImgCont>
       <h1>Арыкбаева Бубайша</h1>
       <FormaInput ongetForm={getForm}/>
       {state.map((el)=>(
-        <RenderText key={el.id} aty={el.value} text={el.text}/>
+        <Render key={el.id} aty={el.value} text={el.text}/>
       ))}
     </MainStyle>
   )

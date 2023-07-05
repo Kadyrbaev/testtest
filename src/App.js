@@ -5,7 +5,7 @@ import Main from './pages/Main';
 
 
 function App() {
-  const [state,setState]=useState(false)
+  const [state,setState]=useState(true)
   const obj = {
     trueState:()=>setState(true),
     falseState:()=>setState(false),
