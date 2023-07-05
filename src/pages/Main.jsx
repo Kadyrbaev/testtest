@@ -1,23 +1,69 @@
-import React from 'react'
-import ImageSlider from '../components/ImageSlider'
+import React, { useState } from 'react'
+import { styled } from 'styled-components'
+import FormaInput from './FormaInput'
+import mom3 from "../assets/mom3.jpg"
+import mom4 from "../assets/mom4.jpg"
+import mom5 from "../assets/mom5.jpg"
+import mom2 from "../assets/mom2.jpg"
+import mom from "../assets/mom.jpg"
+import RenderText from './RenderText'
 
 const Main = () => {
-  const image = [
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  ]
+  let arr=[]
+  const arr2 = JSON.parse(localStorage.getItem("mom"))
+  arr = arr2!==undefined ? arr2 : []
+  const [state, setState] = useState(arr)
+  localStorage.setItem("mom", JSON.stringify(state))
+  
+  function getForm(data){
+    console.log(data);
+    setState((prev)=>[...prev,data])
+  }
+
   return (
-    <div>
-      <ImageSlider images={image}/>
-    </div>
+    <MainStyle>
+      <Mark>
+          <marquee>Mom happy birthday</marquee>
+      </Mark>
+      <ImgCont>
+      <marquee>
+
+          <img src={mom3} alt="" />
+          <img src={mom5} alt="" />
+          <img src={mom4} alt="" />
+          <img src={mom2} alt="" />
+          <img src={mom} alt="" />
+      </marquee>
+      </ImgCont>
+      <h1>Арыкбаева Бубайша</h1>
+      <FormaInput ongetForm={getForm}/>
+      {state.map((el)=>(
+        <RenderText key={el.id} aty={el.value} text={el.text}/>
+      ))}
+    </MainStyle>
   )
 }
 
 export default Main
+
+const MainStyle = styled.main`
+  border: 2px solid blue;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/19/18/57/godafoss-1840758_1280.jpg");
+  background-size: cover;
+`
+const Mark = styled.h1`
+  color: aqua;
+  box-shadow: 0px 0px 12px 1px;
+`
+const ImgCont = styled.div`
+  img{
+    width: 300px;
+    margin-left: 40px;
+    border-radius: 20px;
+  }
+  marquee{
+    width: 800px;
+  }
+`

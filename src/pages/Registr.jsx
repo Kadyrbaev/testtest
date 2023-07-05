@@ -3,13 +3,12 @@ import Header from '../components/Header'
 import Form from '../components/Form'
 import { styled } from 'styled-components'
 
-const Registr = () => {
+const Registr = ({obj}) => {
   return (
     <RegistrStyle>
         <Header/>
-        <marquee>test</marquee>
         {/* <RegistrText>Сайтка кируу учун апамдын туулган кун,айын туура толтуруу керек</RegistrText> */}
-        <Form/>
+        <Form obj={obj}/>
     </RegistrStyle>
   )
 }

@@ -1,14 +1,13 @@
 import {Button, TextField } from '@mui/material'
 import React, {useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 import mom2 from '../assets/mom2.jpg';
 
 
-const Form = () => {
+const Form = ({obj}) => {
   const [day,setDay]=useState("")
   const [month,setMonth]=useState("")
-  const [validateDay, setValidateDay] =useState(false)
+  const [validateDay, setValidateDay] =useState(null)
   const [state,setState]=useState(false)
   console.log(validateDay);
   const changeInput=(e)=>{
@@ -30,6 +29,7 @@ const Form = () => {
     setState((prev)=>!prev)
     if(day === "5" && month==="7" || day==="05" && month==="07"){
       setValidateDay(true)
+      obj.falseState()
     }else{
       setValidateDay(false)
     }
@@ -47,7 +47,6 @@ const Form = () => {
           error
           id="outlined-error"
           label={"Туулган куну"}
-          // defaultValue={validateDay===true ? "age" : "err"}
           onChange={changeInput}
           />
         <TextField
@@ -57,12 +56,10 @@ const Form = () => {
           label="Туулган айы"
           onChange={monthInput}
         />
-        <h5 style={{color: "red"}}>{validateDay===false ? "туура эмес!" : ""}</h5>
-        <Link to={validateDay===true ? "main" : null}>
+        {validateDay===false ? <b style={{color: "red"}}> туура эмес!</b> : null}
           <Button onClick={clickHandler} variant="outlined" color="error">
               Кируу
           </Button>
-        </Link>
     </FormStyle>
   )
 }

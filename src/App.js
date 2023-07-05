@@ -1,13 +1,19 @@
-import { BrowserRouter } from 'react-router-dom';
+import { useState } from 'react';
 import './App.css';
-import MainRoutes from './router';
+import Registr from './pages/Registr';
+import Main from './pages/Main';
+
 
 function App() {
+  const [state,setState]=useState(false)
+  const obj = {
+    trueState:()=>setState(true),
+    falseState:()=>setState(false),
+  }
   return (
     <div className="App">
-      <BrowserRouter>
-        <MainRoutes/>
-      </BrowserRouter>
+      {state  && <Registr obj={obj}/>}
+      {!state && <Main/>}
     </div>
   );
 }
