@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mom23/static/css/main.31fa8e8c.css",
+    "main.js": "/mom23/static/js/main.6e0f8243.js",
+    "static/media/mom2.jpg": "/mom23/static/media/mom2.d91968a1514492aa0f2c.jpg",
+    "static/media/mom.jpg": "/mom23/static/media/mom.5c7c3b537d900e4515a1.jpg",
+    "index.html": "/mom23/index.html",
+    "main.31fa8e8c.css.map": "/mom23/static/css/main.31fa8e8c.css.map",
+    "main.6e0f8243.js.map": "/mom23/static/js/main.6e0f8243.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31fa8e8c.css",
+    "static/js/main.6e0f8243.js"
+  ]
+}
